@@ -133,3 +133,6 @@ config/
 
 # Intelligent Developer Editor
 .idea/
+
+# Logging
+log/*
