@@ -113,5 +113,5 @@ class MontyHall:
         return
 
 
-async def setup(client):
-    client.add_icog(MontyHall(client))
+def setup(client):
+    client.add_interaction_cog(MontyHall(client))

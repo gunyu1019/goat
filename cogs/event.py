@@ -77,5 +77,5 @@ class Events:
             logger_command.info(f"(DM 채널 | {ctx.author}) {ctx.content}")
 
 
-async def setup(client):
-    client.add_icog(Events(client))
+def setup(client):
+    client.add_interaction_cog(Events(client))

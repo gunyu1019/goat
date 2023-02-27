@@ -31,7 +31,5 @@ if __name__ == "__main__":
     # for cog in cogs:
     #    bot.load_extension(cog)
 
-    asyncio.run(
-        bot.load_extensions('cogs', directory)
-    )
+    bot.load_extensions('cogs', directory)
     bot.run(token=token)

@@ -30,14 +30,6 @@ class Error:
     def __init__(self, bot: interaction.Client):
         self.bot = bot
 
-        # CommandTree - CommandNotFound for issue fix
-        # will be delete at discord-extension-interaction v0.6~
-        bot.tree.on_error = self.dummy_on_error
-
-    @staticmethod
-    async def dummy_on_error(*_1, **_2):
-        pass
-
     def _traceback_msg(self, tb):
         if tb.tb_next is None:
             return f"{tb.tb_frame.f_code.co_filename} {tb.tb_frame.f_code.co_name} {tb.tb_lineno}줄 "
@@ -82,5 +74,5 @@ class Error:
         await self.on_interaction_command_error(ctx, error)
 
 
-async def setup(client):
-    client.add_icog(Error(client))
+def setup(client):
+    client.add_interaction_cog(Error(client))
